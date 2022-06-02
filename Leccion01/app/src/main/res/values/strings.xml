@@ -3,4 +3,5 @@
     <string name="bt_roll">Roll</string>
     <string name="tv_result_init">My Roll Dice</string>
     <string name="bt_count_up">Count Up</string>
+    <string name="dice_image">Dice Image</string>
 </resources>

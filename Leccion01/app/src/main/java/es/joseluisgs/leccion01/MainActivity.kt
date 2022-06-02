@@ -10,6 +10,7 @@ import es.joseluisgs.leccion01.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     // Hacemos el binding de los elementos de la vista
     private lateinit var binding: ActivityMainBinding
+    var actualValue = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,27 +31,48 @@ class MainActivity : AppCompatActivity() {
 
         // Haciendo el binding de los elementos de la vista usaremos el viewBinding
         val btRoll = binding.btRoll
-        val tvResult = binding.tvResult
         val btCountUp = binding.btCountUp
 
         btRoll.setOnClickListener {
             rollDice()
-            tvResult.text = (1..6).random().toString()
         }
 
         btCountUp.setOnClickListener {
             countUp()
-            val count =tvResult.text.toString().toIntOrNull() ?: 0
-            tvResult.text = (count + 1).toString()
         }
 
     }
 
     private fun countUp() {
         Toast.makeText(this, "Counting up", Toast.LENGTH_SHORT).show()
+        actualValue = if (actualValue < 6) actualValue + 1 else 1
+        setRollImage()
     }
 
     private fun rollDice() {
         Toast.makeText(this, "Dice rolled", Toast.LENGTH_SHORT).show()
+        // Vamos a obtener la imagen del dado
+        setRollImage()
+    }
+
+    private fun setRollImage() {
+        val drawableResource = getRandomDiceImage()
+
+        // Se la asignamos
+        val imgDice = binding.imgDice
+        imgDice.setImageResource(drawableResource)
+    }
+
+    private fun getRandomDiceImage(): Int {
+        val randomInt = (1..6).random()
+        this.actualValue = randomInt
+        return when (randomInt) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
     }
 }
