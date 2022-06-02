@@ -1,10 +1,10 @@
 package es.joseluisgs.leccion01
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import es.joseluisgs.leccion01.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,9 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         // Para el binding de la vista usando viewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
+        binding.root
         setContentView(binding.root)
-
 
 
         // Para obtener los elementos de la vista usamos findViewById
@@ -44,35 +43,43 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun countUp() {
-        Toast.makeText(this, "Counting up", Toast.LENGTH_SHORT).show()
+        val view = binding.root
+        Snackbar.make(view, "Counting up", Snackbar.LENGTH_LONG)
+            .setAction("Down", countDown()).show()
+
         actualValue = if (actualValue < 6) actualValue + 1 else 1
-        setRollImage()
+        setRollImage(actualValue)
+    }
+
+    private fun countDown(): View.OnClickListener {
+        return View.OnClickListener {
+            actualValue = if (actualValue > 1) actualValue - 1 else 6
+            setRollImage(actualValue)
+        }
+
     }
 
     private fun rollDice() {
         Toast.makeText(this, "Dice rolled", Toast.LENGTH_SHORT).show()
         // Vamos a obtener la imagen del dado
-        setRollImage()
+        val randomInt = (1..6).random()
+        actualValue = randomInt
+        setRollImage(actualValue)
     }
 
-    private fun setRollImage() {
-        val drawableResource = getRandomDiceImage()
-
+    private fun setRollImage(value: Int) {
+        val drawableResource = getRandomDiceImage(value)
         // Se la asignamos
         val imgDice = binding.imgDice
         imgDice.setImageResource(drawableResource)
     }
 
-    private fun getRandomDiceImage(): Int {
-        val randomInt = (1..6).random()
-        this.actualValue = randomInt
-        return when (randomInt) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
+    private fun getRandomDiceImage(value: Int) = when (value) {
+        1 -> R.drawable.dice_1
+        2 -> R.drawable.dice_2
+        3 -> R.drawable.dice_3
+        4 -> R.drawable.dice_4
+        5 -> R.drawable.dice_5
+        else -> R.drawable.dice_6
     }
 }
