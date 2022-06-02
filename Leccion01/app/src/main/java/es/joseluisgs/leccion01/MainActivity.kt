@@ -31,12 +31,23 @@ class MainActivity : AppCompatActivity() {
         // Haciendo el binding de los elementos de la vista usaremos el viewBinding
         val btRoll = binding.btRoll
         val tvResult = binding.tvResult
+        val btCountUp = binding.btCountUp
 
         btRoll.setOnClickListener {
             rollDice()
             tvResult.text = (1..6).random().toString()
         }
 
+        btCountUp.setOnClickListener {
+            countUp()
+            val count =tvResult.text.toString().toIntOrNull() ?: 0
+            tvResult.text = (count + 1).toString()
+        }
+
+    }
+
+    private fun countUp() {
+        Toast.makeText(this, "Counting up", Toast.LENGTH_SHORT).show()
     }
 
     private fun rollDice() {
