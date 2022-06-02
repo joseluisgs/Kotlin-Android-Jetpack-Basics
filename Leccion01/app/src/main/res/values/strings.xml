@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Leccion 01: Hello World!</string>
+    <string name="app_name">Leccion 01: Dice Roller</string>
+    <string name="roll_button_label">Roll</string>
+    <string name="roll_label_init">My Roll Dice</string>
 </resources>
