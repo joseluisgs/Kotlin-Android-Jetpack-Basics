@@ -11,6 +11,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
 
 - [Kotlin Android Basics](#kotlin-android-basics)
   - [Acerca de](#acerca-de)
+  - [Leccion 1: Compila tu primera app](#leccion-1-compila-tu-primera-app)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -19,6 +20,10 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
 Los siguientes proyectos muestran como usar Kotlin para aplicaciones Android en modo básico siguiendo los code examples de[ Android Jetpack de Google](https://developer.android.com/courses/kotlin-android-fundamentals/toc).
 
 ![imagen](./images/android-advanced-topics.svg)
+
+## Leccion 1: Compila tu primera app
+En la Lección 1, aprenderás a configurar Android Studio para usar Kotlin y a compilar apps. Comenzarás con "Hello World" y avanzarás hacia una app que utiliza archivos de imagen y un controlador de clics. Aprenderás cómo se estructuran los proyectos de Android, cómo usar y modificar vistas en tu app de Kotlin para Android, y cómo asegurarte de que tus apps admitan retrocompatibilidad. También aprenderás sobre los niveles de API y las bibliotecas de Android Jetpack.
+
 
 
 ## Autor
