@@ -5,6 +5,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               tools:context=".MainActivity" tools:ignore="UseCompoundDrawables" android:paddingStart="16dp"
+              android:id="@+id/lyMainRoot"
               android:paddingEnd="16dp">
     <TextView
             android:text="@string/txt_name"
