@@ -18,6 +18,7 @@
             android:ems="10"
             android:id="@+id/etNickname" android:minHeight="48dp" style="@style/NameStyle"
             android:textAlignment="center" android:hint="@string/what_is_your_nickname" android:autofillHints=""/>
+
     <Button
             android:text="@string/bt_done"
             android:layout_gravity="center_horizontal"
@@ -41,7 +42,6 @@
             android:paddingBottom="@dimen/small_padding"
             style="@style/NameStyle"/>
 
-
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_on"
@@ -58,4 +58,5 @@
                 android:lineSpacingMultiplier="1.2" android:paddingStart="10dp" android:paddingLeft="10dp"
                 android:paddingTop="10dp" android:paddingRight="10dp"/>
     </ScrollView>
+
 </LinearLayout>
