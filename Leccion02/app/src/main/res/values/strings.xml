@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Leccion02</string>
     <string name="txt_name">JoseLuisGS</string>
+    <string name="yellow_star">Yellow star</string>
 </resources>
