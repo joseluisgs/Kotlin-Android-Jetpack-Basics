@@ -4,15 +4,27 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".MainActivity" tools:ignore="UseCompoundDrawables">
+              tools:context=".MainActivity" tools:ignore="UseCompoundDrawables" android:paddingStart="16dp"
+              android:paddingEnd="16dp">
     <TextView
             android:text="@string/txt_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/txName" android:textAlignment="center"
+            android:layout_height="wrap_content" android:id="@+id/tvName" android:textAlignment="center"
             style="@style/NameStyle"/>
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_on"
-            android:id="@+id/imgStar" android:contentDescription="@string/yellow_star"
-            android:layout_marginTop="@dimen/start_margin_top"/>
+            android:id="@+id/ivStar" android:contentDescription="@string/yellow_star"
+            android:layout_marginTop="@dimen/start_margin_top" tools:ignore="ImageContrastCheck"/>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/svBio"
+            tools:ignore="UselessParent,SpeakableTextPresentCheck">
+        <TextView
+                android:text="@string/txt_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvBio" style="@style/NameStyle"
+                android:lineSpacingMultiplier="1.2" android:paddingStart="10dp" android:paddingLeft="10dp"
+                android:paddingTop="10dp" android:paddingRight="10dp"/>
+    </ScrollView>
 </LinearLayout>
