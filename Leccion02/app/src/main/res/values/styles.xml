@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NameStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/txt_size</item>
+        <item name="android:padding">@dimen/small_padding</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin</item>
+    </style>
+</resources>
