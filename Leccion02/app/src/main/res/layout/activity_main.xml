@@ -23,7 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnName"
+            android:id="@+id/btnDone"
             android:textAlignment="center"
             style="@style/Widget.AppCompat.Button.Colored"
             android:fontFamily="@font/roboto_thin"
@@ -37,6 +37,8 @@
             android:id="@+id/tvNickname"
             android:textAlignment="center"
             android:visibility="gone"
+            android:background="@color/colorAccent"
+            android:paddingBottom="@dimen/small_padding"
             style="@style/NameStyle"/>
 
 
