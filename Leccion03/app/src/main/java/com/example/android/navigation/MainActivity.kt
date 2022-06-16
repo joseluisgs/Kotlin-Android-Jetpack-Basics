@@ -35,14 +35,17 @@ class MainActivity : AppCompatActivity() {
         // Obtenemos el controlador de navegación
         val navController = this.findNavController(R.id.myNavHostFragment)
         // ActioBar es una barra de acciones que se muestra en la parte superior de la pantalla
-        // Con controlador de navegacion
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        // Con controlador de navegacion y drawerLayout
+        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
+        // Menu drawer
+        NavigationUI.setupWithNavController(binding.navView, navController)
+
     }
 
     // Funcion que se ejecuta cuando el usuario presiona el boton de accion de la barra de acciones
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
-        return navController.navigateUp()
+        return NavigationUI.navigateUp(navController, binding.drawerLayout)
     }
 
     // TODO (01) Create the new TitleFragment
