@@ -1,11 +1,10 @@
 package com.example.android.navigation
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,6 +43,9 @@ class TitleFragment : Fragment() {
         // Aplicamos el binding
         _binding = FragmentTitleBinding.inflate(inflater, container, false)
 
+        // para que el fragment tenga un menu
+        setHasOptionsMenu(true)
+
         // Devolvemos la vista
         return binding.root
     }
@@ -56,6 +58,20 @@ class TitleFragment : Fragment() {
             // Se muestra el fragment de la pantalla de juego
             view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
         }
+
+    }
+
+    // Muestra el menu
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    // Cuando se selecciona una opcion del menu
+    // Navegamos al fragment que tiene el mismo id que el id del menu
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {

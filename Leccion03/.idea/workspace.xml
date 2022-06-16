@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2dc48f8-7607-4a0b-839f-eb324e2ad4d9" name="Changes" comment="Leccion 3.2 Navegación en intentar de nuevo">
+    <list default="true" id="d2dc48f8-7607-4a0b-839f-eb324e2ad4d9" name="Changes" comment="Leccion 3.2 ActionBar">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigation/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/navigation.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +23,7 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.56.102:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -32,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="navigationResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -119,7 +121,7 @@
       <workItem from="1655139814380" duration="116000" />
       <workItem from="1655369928442" duration="4769000" />
       <workItem from="1655389131766" duration="599000" />
-      <workItem from="1655392881851" duration="331000" />
+      <workItem from="1655392881851" duration="961000" />
     </task>
     <task id="LOCAL-00001" summary="Leccion 3.1 Crear Fragment">
       <created>1655370745300</created>
@@ -156,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655392891153</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Leccion 3.2 ActionBar">
+      <created>1655393524498</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655393524498</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +193,8 @@
     <MESSAGE value="Leccion 3.2 Navegación Inicial" />
     <MESSAGE value="Leccion 3.2 Navegación Ganar Perder" />
     <MESSAGE value="Leccion 3.2 Navegación en intentar de nuevo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leccion 3.2 Navegación en intentar de nuevo" />
+    <MESSAGE value="Leccion 3.2 ActionBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leccion 3.2 ActionBar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
