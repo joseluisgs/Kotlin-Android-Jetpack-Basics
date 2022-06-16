@@ -55,8 +55,8 @@ class TitleFragment : Fragment() {
 
         // Cuando la vista esta creada, creamos los eventos
         binding.playButton.setOnClickListener { view: View ->
-            // Se muestra el fragment de la pantalla de juego
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            view.findNavController()
+                .navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
 
     }

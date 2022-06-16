@@ -130,7 +130,12 @@ class GameFragment : Fragment() {
                             .navigate(R.id.action_gameFragment_to_gameWonFragment)*/
                         // Using directions to navigate to the GameWonFragment
                         view.findNavController()
-                            .navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment())
+                            .navigate(
+                                GameFragmentDirections.actionGameFragmentToGameWonFragment(
+                                    numQuestions,
+                                    questionIndex
+                                )
+                            )
 
                     }
                 } else {
