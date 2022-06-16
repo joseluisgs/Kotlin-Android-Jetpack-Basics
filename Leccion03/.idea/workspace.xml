@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2dc48f8-7607-4a0b-839f-eb324e2ad4d9" name="Changes" comment="Leccion 3.3 Fragment classes with NavDirection classes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigation/GameWonFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigation/GameWonFragment.kt" afterDir="false" />
-    </list>
+    <list default="true" id="d2dc48f8-7607-4a0b-839f-eb324e2ad4d9" name="Changes" comment="Leccion 3.3 Intent to external activity" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +119,7 @@
       <workItem from="1655139814380" duration="116000" />
       <workItem from="1655369928442" duration="4769000" />
       <workItem from="1655389131766" duration="599000" />
-      <workItem from="1655392881851" duration="3500000" />
+      <workItem from="1655392881851" duration="3777000" />
     </task>
     <task id="LOCAL-00001" summary="Leccion 3.1 Crear Fragment">
       <created>1655370745300</created>
@@ -194,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655396252778</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Leccion 3.3 Intent to external activity">
+      <created>1655396644121</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655396644121</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +232,8 @@
     <MESSAGE value="Leccion 3.3 SafeArgs Gradle" />
     <MESSAGE value="Leccion 3.3 FragmentDirections" />
     <MESSAGE value="Leccion 3.3 Fragment classes with NavDirection classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leccion 3.3 Fragment classes with NavDirection classes" />
+    <MESSAGE value="Leccion 3.3 Intent to external activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leccion 3.3 Intent to external activity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

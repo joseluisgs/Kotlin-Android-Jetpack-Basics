@@ -1,19 +1,20 @@
-# Kotlin Android Basics
+# Kotlin Android Jetpack Basics
 
 Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones Android.
 
 [![Kotlin](https://img.shields.io/badge/Code-Kotlin-blueviolet)](https://kotlinlang.org/)
 [![Android](https://img.shields.io/badge/Code-Android-green)](https://developer.android.com/jetpack)
 [![LISENCE](https://img.shields.io/badge/Lisence-MIT-green)]()
-![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Kotlin-Android-Basics)
+![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Kotlin-Android-Jetpack-Basics)
 
 ![imagen](./images/logo.png)
 
-- [Kotlin Android Basics](#kotlin-android-basics)
+- [Kotlin Android Jetpack Basics](#kotlin-android-jetpack-basics)
   - [Acerca de](#acerca-de)
   - [Lección 1: Compila tu primera app](#lección-1-compila-tu-primera-app)
   - [Lección 2: Diseños](#lección-2-diseños)
   - [Lección 3: Navegación](#lección-3-navegación)
+  - [Lección 4: Ciclos de vida de actividades y fragmentos](#lección-4-ciclos-de-vida-de-actividades-y-fragmentos)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -31,6 +32,9 @@ En la Lección 2, aprenderás a usar el editor de diseño de Android Studio para
 
 ## Lección 3: Navegación
 En la lección 3, aprenderás a crear una navegación útil en una app. Crearás un fragmento, lo agregarás a una app y, por último, agregarás la navegación a la app con el gráfico de navegación de Android Studio. Agregarás un panel lateral de navegación y un menú de opciones a tu app, y trabajarás con la pila de actividades, cambiando el destino del botón Atrás del sistema. Por último, aprenderás a invocar una actividad externa desde la app.
+
+## Lección 4: Ciclos de vida de actividades y fragmentos
+En la Lección 4, aprenderás sobre los ciclos de vida de las actividades y los fragmentos, y aprenderás a administrar situaciones de ciclo de vida complejas. Trabajarás con una app introductoria que contiene varios errores relacionados con el ciclo de vida de Android. Deberás agregar registros a la app para comprender mejor los eventos de ciclo de vida, corregir los errores que contiene y agregar algunas mejoras. También aprenderás sobre la biblioteca de ciclo de vida de Android Jetpack, que puede ayudarte a administrar los eventos de ciclo de vida con código mejor organizado y fácil de mantener.
 
 ## Autor
 
