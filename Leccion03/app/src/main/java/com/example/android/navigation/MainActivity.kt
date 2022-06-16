@@ -18,6 +18,8 @@ package com.example.android.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +31,18 @@ class MainActivity : AppCompatActivity() {
         @Suppress("UNUSED_VARIABLE")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Obtenemos el controlador de navegación
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        // ActioBar es una barra de acciones que se muestra en la parte superior de la pantalla
+        // Con controlador de navegacion
+        NavigationUI.setupActionBarWithNavController(this, navController)
+    }
+
+    // Funcion que se ejecuta cuando el usuario presiona el boton de accion de la barra de acciones
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return navController.navigateUp()
     }
 
     // TODO (01) Create the new TitleFragment
