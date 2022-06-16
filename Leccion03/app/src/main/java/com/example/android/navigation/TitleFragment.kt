@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,7 +43,24 @@ class TitleFragment : Fragment() {
         // Inflate the layout for this fragment
         // Aplicamos el binding
         _binding = FragmentTitleBinding.inflate(inflater, container, false)
+
+        // Devolvemos la vista
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Cuando la vista esta creada, creamos los eventos
+        binding.playButton.setOnClickListener { view: View ->
+            // Se muestra el fragment de la pantalla de juego
+            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

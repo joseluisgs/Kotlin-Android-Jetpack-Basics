@@ -15,7 +15,7 @@
   -->
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
->
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -25,13 +25,16 @@
         <!-- TODO (04) Add a fragment tag for the titleFragment in the LinearLayout
              Use @+id/titleFragment for the android:id
              Use com.example.android.navigation.TitleFragment for the android:name
-             Use match_parent for the layout_height and layout_width -->
-        <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/titleFragment"
-                android:name="com.example.android.navigation.TitleFragment"
+             Use match_parent for the layout_height and layout_width
+             Havemos el navigation fragment
+             -->
+        <fragment
+                android:id="@+id/myNavHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-        />
+                app:navGraph="@navigation/navigation"
+                app:defaultNavHost="true"/>
     </LinearLayout>
 
 </layout>
