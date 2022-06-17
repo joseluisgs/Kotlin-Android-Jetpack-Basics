@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         // Ciclo de vida
         Timber.i("onCreate Called")
-        dessertTimer = DessertTimer()
+        dessertTimer = DessertTimer(this.lifecycle) // Ahora observa el ciclo de vida de esta actividad
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         // Al hacerlo en el onStrat se ejecuta cada vez que vuelve a la actividad
         // Si se hace en el onCreate solo se ejecuta la primera vez que se abre la actividad
-        dessertTimer.startTimer()
+        //dessertTimer.startTimer() // Ya no lo necesita porque hay un observador en el ciclo de vida
 
         Timber.i("onStart called")
     }
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         // si lo comentamos no para en el ciclo de vida
-        dessertTimer.stopTimer()
+        //dessertTimer.stopTimer() // Ya no lo necesita porque hay un observador en el ciclo de vida
 
         Timber.i("onStop Called")
     }
