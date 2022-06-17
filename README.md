@@ -15,6 +15,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
   - [Lección 2: Diseños](#lección-2-diseños)
   - [Lección 3: Navegación](#lección-3-navegación)
   - [Lección 4: Ciclos de vida de actividades y fragmentos](#lección-4-ciclos-de-vida-de-actividades-y-fragmentos)
+  - [Lección 5: Componentes de arquitectura](#lección-5-componentes-de-arquitectura)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -35,6 +36,13 @@ En la lección 3, aprenderás a crear una navegación útil en una app. Crearás
 
 ## Lección 4: Ciclos de vida de actividades y fragmentos
 En la Lección 4, aprenderás sobre los ciclos de vida de las actividades y los fragmentos, y aprenderás a administrar situaciones de ciclo de vida complejas. Trabajarás con una app introductoria que contiene varios errores relacionados con el ciclo de vida de Android. Deberás agregar registros a la app para comprender mejor los eventos de ciclo de vida, corregir los errores que contiene y agregar algunas mejoras. También aprenderás sobre la biblioteca de ciclo de vida de Android Jetpack, que puede ayudarte a administrar los eventos de ciclo de vida con código mejor organizado y fácil de mantener.
+
+## Lección 5: Componentes de arquitectura
+En la lección 5, aprenderás a usar los objetos ViewModel y LiveData. Aprenderás a usar objetos ViewModel para permitir que los datos sobrevivan a cambios de configuración, como las rotaciones de pantallas. Convertirás los datos de la IU de una app en objetos LiveData encapsulados y agregarás métodos de observador que reciban notificaciones cuando cambie el valor de LiveData.
+
+También deberás integrar LiveData y ViewModel con la vinculación de datos, de modo que las vistas de tu diseño se comuniquen directamente con los objetos ViewModel, sin usar los fragmentos de la app para transmitir información. Esta técnica simplifica tu código y elimina la necesidad de controladores de clics en los controladores de IU.
+
+
 
 ## Autor
 
