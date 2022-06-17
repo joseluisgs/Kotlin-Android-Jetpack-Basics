@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private var revenue = 0
     private var dessertsSold = 0
+    private lateinit var dessertTimer: DessertTimer
 
     // Contains all the views
     private lateinit var binding: ActivityMainBinding
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         // Ciclo de vida
         Timber.i("onCreate Called")
+        dessertTimer = DessertTimer()
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -83,6 +85,23 @@ class MainActivity : AppCompatActivity() {
         binding.dessertButton.setImageResource(currentDessert.imageId)
     }
 
+    override fun onStart() {
+        super.onStart()
+        // Al hacerlo en el onStrat se ejecuta cada vez que vuelve a la actividad
+        // Si se hace en el onCreate solo se ejecuta la primera vez que se abre la actividad
+        dessertTimer.startTimer()
+
+        Timber.i("onStart called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // si lo comentamos no para en el ciclo de vida
+        dessertTimer.stopTimer()
+
+        Timber.i("onStop Called")
+    }
+
     override fun onResume() {
         super.onResume()
         Timber.i("onResume Called")
@@ -93,10 +112,6 @@ class MainActivity : AppCompatActivity() {
         Timber.i("onPause Called")
     }
 
-    override fun onStop() {
-        super.onStop()
-        Timber.i("onStop Called")
-    }
 
     override fun onDestroy() {
         super.onDestroy()

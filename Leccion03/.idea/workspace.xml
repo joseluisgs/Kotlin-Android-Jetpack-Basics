@@ -5,13 +5,16 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Title" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2dc48f8-7607-4a0b-839f-eb324e2ad4d9" name="Changes" comment="Leccion 4.1 Ciclo de vida de fragment">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigation/TitleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigation/TitleFragment.kt" afterDir="false" />
-    </list>
+    <list default="true" id="d2dc48f8-7607-4a0b-839f-eb324e2ad4d9" name="Changes" comment="Leccion 4.1 Ciclo de vida de fragment" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +125,7 @@
       <workItem from="1655369928442" duration="4769000" />
       <workItem from="1655389131766" duration="599000" />
       <workItem from="1655392881851" duration="3777000" />
-      <workItem from="1655451359369" duration="300000" />
+      <workItem from="1655451359369" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="Leccion 3.1 Crear Fragment">
       <created>1655370745300</created>
@@ -208,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655451656977</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Leccion 4.1 Ciclo de vida de fragment">
+      <created>1655451665769</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655451665770</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
