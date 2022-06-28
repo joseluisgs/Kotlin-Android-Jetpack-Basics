@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/game_fragment.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/main_activity.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/score_fragment.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/title_fragment.xml" value="0.16574074074074074" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />

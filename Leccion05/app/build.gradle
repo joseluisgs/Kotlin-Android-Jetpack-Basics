@@ -37,6 +37,7 @@ android {
         }
     }
 
+    // Para hacer Data Binding
     buildFeatures {
         dataBinding true
     }
@@ -50,10 +51,16 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
 
-    // KTX
+    // KTX Android KTX es un conjunto de extensiones de Kotlin que se incluyen con Android Jetpack
+    // y otras bibliotecas de Android. Las extensiones KTX proporcionan Kotlin conciso e idiomático
+    // a Jetpack, la plataforma de Android y otras API. Para ello, esas extensiones aprovechan varias
+    // funciones del lenguaje Kotlin,
     implementation 'androidx.core:core-ktx:1.3.1'
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
+
+    //ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 }
