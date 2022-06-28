@@ -5,7 +5,21 @@ import androidx.lifecycle.ViewModel
 
 // View Model for GameFragment
 class GameViewModel : ViewModel() {
+    // Nuestro modelo de datos
+    // The current word
+    var word = ""
+
+    // The current score
+    var score = 0
+
+    // The list of words - the front of the list is the next word to guess
+    lateinit var wordList: MutableList<String>
+
     init {
+        // Limpiamos los datos
+        resetList()
+        nextWord()
+
         Log.i("GameViewModel", "GameViewModel created!")
     }
 
@@ -14,4 +28,57 @@ class GameViewModel : ViewModel() {
         super.onCleared()
         Log.i("GameViewModel", "GameViewModel destroyed!")
     }
+
+    /**
+     * Resets the list of words and randomizes the order
+     */
+    private fun resetList() {
+        wordList = mutableListOf(
+            "queen",
+            "hospital",
+            "basketball",
+            "cat",
+            "change",
+            "snail",
+            "soup",
+            "calendar",
+            "sad",
+            "desk",
+            "guitar",
+            "home",
+            "railway",
+            "zebra",
+            "jelly",
+            "car",
+            "crow",
+            "trade",
+            "bag",
+            "roll",
+            "bubble"
+        )
+        wordList.shuffle()
+    }
+
+    /** Methods for buttons presses **/
+    fun onSkip() {
+        score--
+        nextWord()
+    }
+
+    fun onCorrect() {
+        score++
+        nextWord()
+    }
+
+    /**
+     * Moves to the next word in the list
+     */
+    private fun nextWord() {
+        if (!wordList.isEmpty()) {
+            //Select and remove a word from the list
+            word = wordList.removeAt(0)
+        }
+    }
+
+
 }
