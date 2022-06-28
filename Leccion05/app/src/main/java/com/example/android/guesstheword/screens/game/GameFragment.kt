@@ -24,6 +24,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.example.android.guesstheword.R
@@ -56,14 +57,23 @@ class GameFragment : Fragment() {
         Log.i("GameFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
+        // Observadores de datos para hacer la interfaz reactiva, de esta manera cada vez que cambie un valor se actualiza la interfaz
+        /** Setting up LiveData observation relationship **/
+        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
+            binding.scoreText.text = newScore.toString()
+        })
+        viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
+            binding.wordText.text = newWord
+        })
+
         // eventos
         binding.correctButton.setOnClickListener { onCorrect() }
         binding.skipButton.setOnClickListener { onSkip() }
         binding.endGameButton.setOnClickListener { onEndGame() }
 
-        // metodos de inicialización
-        updateScoreText()
-        updateWordText()
+        // metodos de inicialización - Ya no se necesitan po Reactividad
+        //updateScoreText()
+        // updateWordText()
         return binding.root
 
     }
@@ -72,26 +82,29 @@ class GameFragment : Fragment() {
 
     private fun onSkip() {
         viewModel.onSkip()
-        updateWordText()
-        updateScoreText()
+        // Ya nos e necesita por reactividad
+        //updateWordText()
+        //updateScoreText()
     }
 
     private fun onCorrect() {
         viewModel.onCorrect()
-        updateWordText()
-        updateScoreText()
+        // Ya nos e necesita por reactividad
+        //updateWordText()
+        //updateScoreText()
     }
 
 
     /** Methods for updating the UI **/
-
+    /*Ya no se necesitan po Reactividad
     private fun updateWordText() {
         binding.wordText.text = viewModel.word.value
-    }
+    }*/
 
+    /*Ya no se necesitan po Reactividad
     private fun updateScoreText() {
         binding.scoreText.text = viewModel.score.value.toString()
-    }
+    }*/
 
     // Fin de juego
     private fun onEndGame() {
