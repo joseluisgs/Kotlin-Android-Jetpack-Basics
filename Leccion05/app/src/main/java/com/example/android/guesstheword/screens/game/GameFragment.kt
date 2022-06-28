@@ -57,6 +57,10 @@ class GameFragment : Fragment() {
         Log.i("GameFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
+        // Set the viewmodel for databinding - this allows the bound layout access
+        // to all the data in the ViewModel
+        binding.gameViewModel = viewModel
+
         // Observadores de datos para hacer la interfaz reactiva, de esta manera cada vez que cambie un valor se actualiza la interfaz
         /** Setting up LiveData observation relationship **/
         viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
@@ -70,10 +74,10 @@ class GameFragment : Fragment() {
             if (hasFinished) gameFinished()
         })
 
-        // eventos
-        binding.correctButton.setOnClickListener { onCorrect() }
-        binding.skipButton.setOnClickListener { onSkip() }
-        binding.endGameButton.setOnClickListener { onEndGame() }
+        // eventos, los eliminamos porque hacemos el binding con la vista
+        // binding.correctButton.setOnClickListener { onCorrect() }
+        // binding.skipButton.setOnClickListener { onSkip() }
+        // binding.endGameButton.setOnClickListener { onEndGame() }
 
         // metodos de inicialización - Ya no se necesitan po Reactividad
         //updateScoreText()
@@ -84,19 +88,19 @@ class GameFragment : Fragment() {
 
     /** Methods for button click handlers **/
 
-    private fun onSkip() {
-        viewModel.onSkip()
-        // Ya nos e necesita por reactividad
-        //updateWordText()
-        //updateScoreText()
-    }
+    /*   private fun onSkip() {
+           viewModel.onSkip()
+           // Ya nos e necesita por reactividad
+           //updateWordText()
+           //updateScoreText()
+       }
 
-    private fun onCorrect() {
-        viewModel.onCorrect()
-        // Ya nos e necesita por reactividad
-        //updateWordText()
-        //updateScoreText()
-    }
+       private fun onCorrect() {
+           viewModel.onCorrect()
+           // Ya nos e necesita por reactividad
+           //updateWordText()
+           //updateScoreText()
+       }*/
 
 
     /** Methods for updating the UI **/
@@ -111,11 +115,11 @@ class GameFragment : Fragment() {
     }*/
 
     // Fin de juego
-    private fun onEndGame() {
-        Log.i("GameFragment", "Called onEndGame")
-        gameFinished()
-    }
-
+    /* private fun onEndGame() {
+         Log.i("GameFragment", "Called onEndGame")
+         gameFinished()
+     }
+ */
     /**
      * Called when the game is finished
      */

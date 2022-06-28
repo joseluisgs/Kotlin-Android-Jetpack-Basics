@@ -56,6 +56,9 @@ class ScoreFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(ScoreViewModel::class.java)
 
+        // Binding con la vista XML
+        binding.scoreViewModel = viewModel
+
         // La factoría en este caso no es necesaria, pero es una buena práctica para delegar
         // En este caso podríamos acceder al modelview y asignarla
         // viewModel.score = ScoreFragmentArgs.fromBundle(requireArguments()).score
@@ -73,8 +76,8 @@ class ScoreFragment : Fragment() {
             }
         })
 
-        // Eventos
-        binding.playAgainButton.setOnClickListener { viewModel.onPlayAgain() }
+        // Eventos ya no lo necsitamos porque lo hemos enlazado con la vista
+        // binding.playAgainButton.setOnClickListener { viewModel.onPlayAgain() }
 
         // Actualizamos la puntuación en el binding ya no hace falta por reactividad
         // binding.scoreText.text = viewModel.score.toString()
