@@ -60,15 +60,20 @@ class GameFragment : Fragment() {
         // Set the viewmodel for databinding - this allows the bound layout access
         // to all the data in the ViewModel
         binding.gameViewModel = viewModel
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates
+        binding.lifecycleOwner = viewLifecycleOwner
 
         // Observadores de datos para hacer la interfaz reactiva, de esta manera cada vez que cambie un valor se actualiza la interfaz
         /** Setting up LiveData observation relationship **/
-        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
+        // Ya no se usa porque lo hemos enlanzado por la vista XML
+        /*viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
-        })
-        viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
-            binding.wordText.text = newWord
-        })
+        })*/
+        // Ya no se usa porque lo hemos enlanzado por la vista XML
+        /* viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
+             binding.wordText.text = newWord
+         })*/
         // Observer for the Game finished event
         viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer<Boolean> { hasFinished ->
             if (hasFinished) gameFinished()

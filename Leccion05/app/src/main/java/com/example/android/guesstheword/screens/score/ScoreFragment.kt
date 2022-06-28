@@ -58,16 +58,20 @@ class ScoreFragment : Fragment() {
 
         // Binding con la vista XML
         binding.scoreViewModel = viewModel
+        // Specify the fragment view as the lifecycle owner of the binding.
+        // This is used so that the binding can observe LiveData updates
+        binding.lifecycleOwner = viewLifecycleOwner
 
         // La factoría en este caso no es necesaria, pero es una buena práctica para delegar
         // En este caso podríamos acceder al modelview y asignarla
         // viewModel.score = ScoreFragmentArgs.fromBundle(requireArguments()).score
 
         // Add observer for score
-        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
+        // Ya no hace falta porque ya está enlazado en la vista
+        /*viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
         })
-
+        */
         // Navigates back to game when button is pressed
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
             if (playAgain) {
