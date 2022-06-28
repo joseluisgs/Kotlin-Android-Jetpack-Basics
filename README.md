@@ -16,6 +16,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
   - [Lección 3: Navegación](#lección-3-navegación)
   - [Lección 4: Ciclos de vida de actividades y fragmentos](#lección-4-ciclos-de-vida-de-actividades-y-fragmentos)
   - [Lección 5: Componentes de arquitectura](#lección-5-componentes-de-arquitectura)
+  - [Lección 6: Corrutinas y bases de datos de Room](#lección-6-corrutinas-y-bases-de-datos-de-room)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -41,6 +42,9 @@ En la Lección 4, aprenderás sobre los ciclos de vida de las actividades y los 
 En la lección 5, aprenderás a usar los objetos ViewModel y LiveData. Aprenderás a usar objetos ViewModel para permitir que los datos sobrevivan a cambios de configuración, como las rotaciones de pantallas. Convertirás los datos de la IU de una app en objetos LiveData encapsulados y agregarás métodos de observador que reciban notificaciones cuando cambie el valor de LiveData.
 
 También deberás integrar LiveData y ViewModel con la vinculación de datos, de modo que las vistas de tu diseño se comuniquen directamente con los objetos ViewModel, sin usar los fragmentos de la app para transmitir información. Esta técnica simplifica tu código y elimina la necesidad de controladores de clics en los controladores de IU.
+
+## Lección 6: Corrutinas y bases de datos de Room
+En la lección 6, aprenderás a usar la biblioteca de base de datos de Room. Room se encarga de muchas de las tareas de ajuste y configuración de una base de datos, y simplifica el código para interactuar con ella. Aprenderás a usar las corrutinas de Kotlin para alejar las operaciones de la base de datos del subproceso principal y descubrirás cómo usar ViewModel y LiveData con la navegación de apps.
 
 
 
