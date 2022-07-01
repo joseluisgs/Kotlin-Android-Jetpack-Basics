@@ -15,3 +15,41 @@
  */
 
 package com.example.android.trackmysleepquality.database
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+
+// Creamos la base de datos, con el array entidades
+@Database(entities = [SleepNight::class], version = 1, exportSchema = false)
+abstract class SleepDatabase : RoomDatabase() {
+    // El DAO
+    abstract val sleepDatabaseDao: SleepDatabaseDao
+
+    // Para obtener una instancia del manejador de la base de datos
+    // Otra forma es hacerlo en
+    // https://github.com/joseluisgs/Kotlin-Jetpack-Android/blob/main/app/src/main/java/es/joseluisgs/jetpacktutorial/FilmApp.kt
+    // Estoy haciendo un Singleton
+    companion object {
+        @Volatile
+        private var INSTANCE: SleepDatabase? = null
+        fun getInstance(context: Context): SleepDatabase {
+            synchronized(this) {
+                var instance = INSTANCE
+
+                if (instance == null) {
+                    instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        SleepDatabase::class.java,
+                        "sleep_history_database"
+                    )
+                        .fallbackToDestructiveMigration()
+                        .build()
+                    INSTANCE = instance
+                }
+                return instance
+            }
+        }
+    }
+}
