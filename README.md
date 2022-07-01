@@ -17,6 +17,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
   - [Lección 4: Ciclos de vida de actividades y fragmentos](#lección-4-ciclos-de-vida-de-actividades-y-fragmentos)
   - [Lección 5: Componentes de arquitectura](#lección-5-componentes-de-arquitectura)
   - [Lección 6: Corrutinas y bases de datos de Room](#lección-6-corrutinas-y-bases-de-datos-de-room)
+  - [Lección 7: RecyclerView](#lección-7-recyclerview)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -46,6 +47,8 @@ También deberás integrar LiveData y ViewModel con la vinculación de datos, de
 ## Lección 6: Corrutinas y bases de datos de Room
 En la lección 6, aprenderás a usar la biblioteca de base de datos de Room. Room se encarga de muchas de las tareas de ajuste y configuración de una base de datos, y simplifica el código para interactuar con ella. Aprenderás a usar las corrutinas de Kotlin para alejar las operaciones de la base de datos del subproceso principal y descubrirás cómo usar ViewModel y LiveData con la navegación de apps.
 
+## Lección 7: RecyclerView
+En la lección 7, se explica cómo usar una RecyclerView para mostrar listas y cuadrículas de elementos de manera eficiente. Para cuadrículas y listas complejas, aprenderás a hacer que RecyclerView sea más eficiente y que tu código sea más fácil de mantener y extender. Aprenderás a hacer que los elementos de una RecyclerView admitan clics. También aprenderás a agregar más de un contenedor de vistas y un diseño a listas y cuadrículas en RecyclerView, por ejemplo, para agregar un encabezado a tu app.
 
 
 ## Autor
