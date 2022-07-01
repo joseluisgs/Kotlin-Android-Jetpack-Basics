@@ -16,7 +16,6 @@
 
 package com.example.android.trackmysleepquality
 
-
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -37,11 +36,17 @@ import java.io.IOException
  * adding the UI.
  */
 
+// No funiona al añadir la parte de las corrutinas
+
 @RunWith(AndroidJUnit4::class)
 class SleepDatabaseTest {
 
     private lateinit var sleepDao: SleepDatabaseDao
     private lateinit var db: SleepDatabase
+
+    /* private val dispatcher = TestCoroutineDispatcher()
+     private val testScope = TestCoroutineScope(dispatcher)*/
+
 
     @Before
     fun createDb() {
@@ -63,10 +68,12 @@ class SleepDatabaseTest {
 
     @Test
     @Throws(Exception::class)
-    fun insertAndGetNight() {
+    fun insertAndGetNight() /*= runBlockingTest*/ {
         val night = SleepNight()
         sleepDao.insert(night)
         val tonight = sleepDao.getTonight()
         assertEquals(tonight?.sleepQuality, -1)
     }
 }
+
+
