@@ -80,6 +80,7 @@ class SleepTrackerFragment : Fragment() {
         // Adaptador
         val adapter = SleepNightAdapter(SleepNightListener { nightId ->
             Toast.makeText(context, "$nightId", Toast.LENGTH_LONG).show()
+            sleepTrackerViewModel.onSleepNightClicked(nightId)
         })
         // El layout manager es una clase que nos permite controlar la forma en que los elementos
         with(binding.sleepList) {
@@ -93,6 +94,16 @@ class SleepTrackerFragment : Fragment() {
                 // adapter.data = it
                 // en vez de pasarle toda la lista le pasamos la lista para que analice los cambios
                 adapter.submitList(it)
+            }
+        })
+
+        sleepTrackerViewModel.navigateToSleepDetail.observe(viewLifecycleOwner, Observer { night ->
+            night?.let {
+                this.findNavController().navigate(
+                    SleepTrackerFragmentDirections
+                        .actionSleepTrackerFragmentToSleepDetailFragment(night)
+                )
+                sleepTrackerViewModel.onSleepDetailNavigated()
             }
         })
 
