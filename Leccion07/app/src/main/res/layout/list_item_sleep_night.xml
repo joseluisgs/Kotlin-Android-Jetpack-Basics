@@ -17,7 +17,7 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
         <variable
                 name="clickListener"
-                type="com.example.android.trackmysleepquality.sleeptracker.SleepNightListeners"/>
+                type="com.example.android.trackmysleepquality.sleeptracker.SleepNightAdaptorListeners"/>
     </data>
 
     <!-- <androidx.constraintlayout.widget.ConstraintLayout

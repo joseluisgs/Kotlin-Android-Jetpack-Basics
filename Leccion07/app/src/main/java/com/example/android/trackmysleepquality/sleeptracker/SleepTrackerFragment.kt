@@ -79,14 +79,14 @@ class SleepTrackerFragment : Fragment() {
 
         // Adaptador con el evento made in jose luis pasandole la funcion
         val myAdapter = SleepNightAdapter(
-            SleepNightListeners(
+            SleepNightAdaptorListeners(
                 onClick = { sleepNight ->
                     Toast.makeText(context, "Has hecho click en ${sleepNight.nightId}", Toast.LENGTH_LONG).show()
                     sleepTrackerViewModel.onSleepNightClicked(sleepNight.nightId)
                 },
                 onLongClick = { sleepNight ->
                     Toast.makeText(context, "Has hecho click largo en ${sleepNight.nightId}", Toast.LENGTH_LONG).show()
-                    return@SleepNightListeners true
+                    return@SleepNightAdaptorListeners true
                 }
             )
         )
