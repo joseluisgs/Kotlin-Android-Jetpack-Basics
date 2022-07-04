@@ -78,22 +78,30 @@ class SleepTrackerFragment : Fragment() {
         binding.sleepTrackerViewModel = sleepTrackerViewModel
 
         // Adaptador
-        val adapter = SleepNightAdapter(SleepNightListener { nightId ->
+        val myAdapter = SleepNightAdapter(SleepNightListener { nightId ->
             Toast.makeText(context, "$nightId", Toast.LENGTH_LONG).show()
             sleepTrackerViewModel.onSleepNightClicked(nightId)
         })
+        val myLayoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
+        // Cambiamos el ancho de la columna
+        myLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int) = when (position) {
+                0 -> 3
+                else -> 1
+            }
+        }
         // El layout manager es una clase que nos permite controlar la forma en que los elementos
         with(binding.sleepList) {
-            this.adapter = adapter
+            adapter = myAdapter
             // layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            layoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
+            layoutManager = myLayoutManager
         }
         // Aqui le pasamos la lista al apdatrador
         sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
             it?.let {
                 // adapter.data = it
                 // en vez de pasarle toda la lista le pasamos la lista para que analice los cambios
-                adapter.addHeaderAndSubmitList(it)
+                myAdapter.addHeaderAndSubmitList(it)
             }
         })
 
