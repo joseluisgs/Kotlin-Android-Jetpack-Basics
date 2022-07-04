@@ -21,7 +21,7 @@ private val ITEM_VIEW_TYPE_HEADER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
 
 // ListAdpater es más eficiente que un RecyclerViewAdapter
-class SleepNightAdapter(val clickListener: SleepNightListener) :
+class SleepNightAdapter(private val myListeners: SleepNightListeners) :
     ListAdapter<DataItem, RecyclerView.ViewHolder>(SleepNightDiffCallback()) {
 
     // para corutinas
@@ -32,7 +32,7 @@ class SleepNightAdapter(val clickListener: SleepNightListener) :
         return when (viewType) {
             ITEM_VIEW_TYPE_HEADER -> TextViewHolder.from(parent)
             ITEM_VIEW_TYPE_ITEM -> ViewHolder.from(parent)
-            else -> throw ClassCastException("Unknown viewType ${viewType}")
+            else -> throw ClassCastException("Unknown viewType $viewType")
         }
     }
 
@@ -59,7 +59,13 @@ class SleepNightAdapter(val clickListener: SleepNightListener) :
                 // Ya vienen implementada en ListAdpater
                 val nightItem = getItem(position) as DataItem.SleepNightItem
                 // Le pasamos los resources a los views tienen asociados
-                holder.bind(nightItem.sleepNight, clickListener)
+                /*holder.itemView.setOnClickListener {
+                    onItemClicked(nightItem.sleepNight)
+                }*/
+                // Esta parte no es necesaria
+                //holder.bind(nightItem.sleepNight, onItemClicked)
+                // Le pasamos los eventos a los views tienen asociados
+                holder.bind(nightItem.sleepNight, myListeners)
             }
         }
     }
@@ -86,7 +92,7 @@ class SleepNightAdapter(val clickListener: SleepNightListener) :
         // Hace el bindin de manera manual
         fun bind(
             item: SleepNight,
-            clickListener: SleepNightListener
+            sleepNightListeners: SleepNightListeners
         ) {
 
             // Esto es por si queremos hacerlo por código
@@ -107,7 +113,10 @@ class SleepNightAdapter(val clickListener: SleepNightListener) :
             // Con Binding en las vistas
             binding.sleep = item
             binding.executePendingBindings()
-            binding.clickListener = clickListener
+            // Definimos los eventos
+            binding.root.setOnClickListener { sleepNightListeners.onClick(item) }
+            binding.root.setOnLongClickListener { sleepNightListeners.onLongClick(item) }
+            // binding.clickListener = sleepNightListeners // Si lo queremos en la vista
         }
 
         companion object {
@@ -140,11 +149,6 @@ class SleepNightDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
-// Para un evento de click en un item de la lista
-class SleepNightListener(val clickListener: (sleepId: Long) -> Unit) {
-    fun onClick(night: SleepNight) = clickListener(night.nightId)
-}
-
 sealed class DataItem {
     abstract val id: Long
 
@@ -155,4 +159,12 @@ sealed class DataItem {
     object Header : DataItem() {
         override val id = Long.MIN_VALUE
     }
+
 }
+
+// Para un evento de click en un item de la lista, esto esta bien si tenemos muchos
+// eventos y queremos una clase que los encapsule
+class SleepNightListeners(
+    val onClick: (sleepNight: SleepNight) -> Unit,
+    val onLongClick: (sleepNight: SleepNight) -> Boolean
+)

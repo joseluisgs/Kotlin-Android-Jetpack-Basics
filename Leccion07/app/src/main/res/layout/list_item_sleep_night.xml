@@ -17,13 +17,17 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
         <variable
                 name="clickListener"
-                type="com.example.android.trackmysleepquality.sleeptracker.SleepNightListener"/>
+                type="com.example.android.trackmysleepquality.sleeptracker.SleepNightListeners"/>
     </data>
 
+    <!-- <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/itemSleepNight"
+             android:layout_width="match_parent"
+             android:onClick="@{() -> clickListener.onClick(sleep)}"
+             android:layout_height="wrap_content">-->
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/itemSleepNight"
             android:layout_width="match_parent"
-            android:onClick="@{() -> clickListener.onClick(sleep)}"
             android:layout_height="wrap_content">
 
         <ImageView

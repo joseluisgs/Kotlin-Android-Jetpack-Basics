@@ -77,11 +77,20 @@ class SleepTrackerFragment : Fragment() {
         // give the binding object a reference to it.
         binding.sleepTrackerViewModel = sleepTrackerViewModel
 
-        // Adaptador
-        val myAdapter = SleepNightAdapter(SleepNightListener { nightId ->
-            Toast.makeText(context, "$nightId", Toast.LENGTH_LONG).show()
-            sleepTrackerViewModel.onSleepNightClicked(nightId)
-        })
+        // Adaptador con el evento made in jose luis pasandole la funcion
+        val myAdapter = SleepNightAdapter(
+            SleepNightListeners(
+                onClick = { sleepNight ->
+                    Toast.makeText(context, "Has hecho click en ${sleepNight.nightId}", Toast.LENGTH_LONG).show()
+                    sleepTrackerViewModel.onSleepNightClicked(sleepNight.nightId)
+                },
+                onLongClick = { sleepNight ->
+                    Toast.makeText(context, "Has hecho click largo en ${sleepNight.nightId}", Toast.LENGTH_LONG).show()
+                    return@SleepNightListeners true
+                }
+            )
+        )
+
         val myLayoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
         // Cambiamos el ancho de la columna
         myLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -105,6 +114,7 @@ class SleepTrackerFragment : Fragment() {
             }
         })
 
+        // si se produce el evento
         sleepTrackerViewModel.navigateToSleepDetail.observe(viewLifecycleOwner, Observer { night ->
             night?.let {
                 this.findNavController().navigate(
