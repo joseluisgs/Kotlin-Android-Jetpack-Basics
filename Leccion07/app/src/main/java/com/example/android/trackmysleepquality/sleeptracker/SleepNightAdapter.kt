@@ -1,6 +1,8 @@
 package com.example.android.trackmysleepquality.sleeptracker
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -8,22 +10,54 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.trackmysleepquality.database.SleepNight
+import com.example.android.trackmysleepquality.databinding.HeaderBinding
 import com.example.android.trackmysleepquality.databinding.ListItemSleepNightBinding
+
+private val ITEM_VIEW_TYPE_HEADER = 0
+private val ITEM_VIEW_TYPE_ITEM = 1
 
 // ListAdpater es más eficiente que un RecyclerViewAdapter
 class SleepNightAdapter(val clickListener: SleepNightListener) :
-    ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(SleepNightDiffCallback()) {
-    override fun onCreateViewHolder(
-        parent: ViewGroup, viewType: Int
-    ): ViewHolder {
-        return ViewHolder.from(parent)
+    ListAdapter<DataItem, RecyclerView.ViewHolder>(SleepNightDiffCallback()) {
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            ITEM_VIEW_TYPE_HEADER -> TextViewHolder.from(parent)
+            ITEM_VIEW_TYPE_ITEM -> ViewHolder.from(parent)
+            else -> throw ClassCastException("Unknown viewType ${viewType}")
+        }
+    }
+
+    fun addHeaderAndSubmitList(list: List<SleepNight>?) {
+        val items = when (list) {
+            null -> listOf(DataItem.Header)
+            else -> listOf(DataItem.Header) + list.map { DataItem.SleepNightItem(it) }
+        }
+        submitList(items)
     }
 
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = getItem(position) // Ya vienen implementada en ListAdpater
-        // Le pasamos los resources a los views tienen asociados
-        holder.bind(item, clickListener)
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is ViewHolder -> {
+                // Ya vienen implementada en ListAdpater
+                val nightItem = getItem(position) as DataItem.SleepNightItem
+                // Le pasamos los resources a los views tienen asociados
+                holder.bind(nightItem.sleepNight, clickListener)
+            }
+        }
+    }
+
+
+    class TextViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        companion object {
+            fun from(parent: ViewGroup): TextViewHolder {
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = HeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                return TextViewHolder(binding.root)
+            }
+        }
     }
 
     class ViewHolder
@@ -68,17 +102,25 @@ class SleepNightAdapter(val clickListener: SleepNightListener) :
             }
         }
     }
+
+    override fun getItemViewType(position: Int): Int {
+        return when (getItem(position)) {
+            is DataItem.Header -> ITEM_VIEW_TYPE_HEADER
+            is DataItem.SleepNightItem -> ITEM_VIEW_TYPE_ITEM
+        }
+    }
 }
 
 // De esta manera vamos a mejorar nuestro código para saber qué elementos pintar
-class SleepNightDiffCallback : DiffUtil.ItemCallback<SleepNight>() {
-    override fun areItemsTheSame(oldItem: SleepNight, newItem: SleepNight): Boolean {
-        // son el mismo item si tienen la misma id
-        return oldItem.nightId == newItem.nightId
+class SleepNightDiffCallback : DiffUtil.ItemCallback<DataItem>() {
+    override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+        // son el mismo si tienen la misma id
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: SleepNight, newItem: SleepNight): Boolean {
-        // Son el mismo contenido, si son iguales (equals)
+    @SuppressLint("DiffUtilEquals")
+    // tiene el mismo contenido (equals)
+    override fun areContentsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
         return oldItem == newItem
     }
 }
@@ -86,4 +128,16 @@ class SleepNightDiffCallback : DiffUtil.ItemCallback<SleepNight>() {
 // Para un evento de click en un item de la lista
 class SleepNightListener(val clickListener: (sleepId: Long) -> Unit) {
     fun onClick(night: SleepNight) = clickListener(night.nightId)
+}
+
+sealed class DataItem {
+    abstract val id: Long
+
+    data class SleepNightItem(val sleepNight: SleepNight) : DataItem() {
+        override val id = sleepNight.nightId
+    }
+
+    object Header : DataItem() {
+        override val id = Long.MIN_VALUE
+    }
 }
