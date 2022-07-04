@@ -8,6 +8,8 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Esto es para hacer el binding directo al objeto No es obligatorio -->
     <data>
         <variable
                 name="sleep"
@@ -21,6 +23,7 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
         <ImageView
                 android:id="@+id/quality_image"
+                app:sleepImage="@{sleep}"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
@@ -33,6 +36,7 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
         <TextView
                 android:id="@+id/sleep_length"
+                app:sleepDurationFormatted="@{sleep}"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="8dp"
@@ -45,6 +49,7 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
         <TextView
                 android:id="@+id/quality_string"
+                app:sleepQualityString="@{sleep}"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="8dp"
