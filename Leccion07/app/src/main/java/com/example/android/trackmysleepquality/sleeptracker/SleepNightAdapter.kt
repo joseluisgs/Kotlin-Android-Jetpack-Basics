@@ -11,7 +11,8 @@ import com.example.android.trackmysleepquality.database.SleepNight
 import com.example.android.trackmysleepquality.databinding.ListItemSleepNightBinding
 
 // ListAdpater es más eficiente que un RecyclerViewAdapter
-class SleepNightAdapter : ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(SleepNightDiffCallback()) {
+class SleepNightAdapter(val clickListener: SleepNightListener) :
+    ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(SleepNightDiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): ViewHolder {
@@ -22,7 +23,7 @@ class SleepNightAdapter : ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position) // Ya vienen implementada en ListAdpater
         // Le pasamos los resources a los views tienen asociados
-        holder.bind(item)
+        holder.bind(item, clickListener)
     }
 
     class ViewHolder
@@ -35,7 +36,8 @@ class SleepNightAdapter : ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(
 
         // Hace el bindin de manera manual
         fun bind(
-            item: SleepNight
+            item: SleepNight,
+            clickListener: SleepNightListener
         ) {
 
             // Esto es por si queremos hacerlo por código
@@ -56,6 +58,7 @@ class SleepNightAdapter : ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(
             // Con Binding en las vistas
             binding.sleep = item
             binding.executePendingBindings()
+            binding.clickListener = clickListener
         }
 
         companion object {
@@ -78,4 +81,9 @@ class SleepNightDiffCallback : DiffUtil.ItemCallback<SleepNight>() {
         // Son el mismo contenido, si son iguales (equals)
         return oldItem == newItem
     }
+}
+
+// Para un evento de click en un item de la lista
+class SleepNightListener(val clickListener: (sleepId: Long) -> Unit) {
+    fun onClick(night: SleepNight) = clickListener(night.nightId)
 }
