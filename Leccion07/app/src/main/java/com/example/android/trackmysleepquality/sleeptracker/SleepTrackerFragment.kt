@@ -20,11 +20,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.databinding.FragmentSleepTrackerBinding
@@ -37,6 +37,8 @@ import com.google.android.material.snackbar.Snackbar
  * The Clear button will clear all data from the database.
  */
 class SleepTrackerFragment : Fragment() {
+    private var _binding: FragmentSleepTrackerBinding? = null
+    private val binding get() = _binding!!
 
     /**
      * Called when the Fragment is ready to display content to the screen.
@@ -53,9 +55,10 @@ class SleepTrackerFragment : Fragment() {
     ): View? {
 
         // Get a reference to the binding object and inflate the fragment views.
-        val binding: FragmentSleepTrackerBinding = DataBindingUtil.inflate(
+        /*val binding: FragmentSleepTrackerBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_sleep_tracker, container, false
-        )
+        )*/
+        _binding = FragmentSleepTrackerBinding.inflate(inflater, container, false)
 
         val application = requireNotNull(this.activity).application
 
@@ -73,8 +76,14 @@ class SleepTrackerFragment : Fragment() {
         // give the binding object a reference to it.
         binding.sleepTrackerViewModel = sleepTrackerViewModel
 
+        // Adaptador
         val adapter = SleepNightAdapter()
-        binding.sleepList.adapter = adapter
+        // El layout manager es una clase que nos permite controlar la forma en que los elementos
+        with(binding.sleepList) {
+            this.adapter = adapter
+            // layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            layoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
+        }
         sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
             it?.let {
                 // adapter.data = it
@@ -122,6 +131,8 @@ class SleepTrackerFragment : Fragment() {
                 sleepTrackerViewModel.doneNavigating()
             }
         })
-        return binding.root
+        //val manager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
+        val layoutManager =
+            return binding.root
     }
 }

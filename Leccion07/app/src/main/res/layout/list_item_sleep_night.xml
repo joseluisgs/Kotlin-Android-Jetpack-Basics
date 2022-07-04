@@ -23,40 +23,29 @@ Put the cursor on the ConstraintLayout tag and press Alt+Enter (Option+Enter on 
 
         <ImageView
                 android:id="@+id/quality_image"
-                app:sleepImage="@{sleep}"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="60dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_sleep_5"/>
-
-        <TextView
-                android:id="@+id/sleep_length"
-                app:sleepDurationFormatted="@{sleep}"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/quality_image"
-                app:layout_constraintTop_toTopOf="@+id/quality_image"
-                tools:text="Wednesday"/>
+                tools:srcCompat="@drawable/ic_sleep_5"
+                app:sleepImage="@{sleep}"/>
 
         <TextView
                 android:id="@+id/quality_string"
-                app:sleepQualityString="@{sleep}"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/sleep_length"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/sleep_length"
-                app:layout_constraintTop_toBottomOf="@+id/sleep_length"
-                tools:text="Excellent!!!"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quality_image"
+                app:sleepQualityString="@{sleep}"
+                tools:text="Excellent!"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
