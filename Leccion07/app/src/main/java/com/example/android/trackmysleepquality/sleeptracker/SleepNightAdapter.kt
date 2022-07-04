@@ -12,6 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.trackmysleepquality.database.SleepNight
 import com.example.android.trackmysleepquality.databinding.HeaderBinding
 import com.example.android.trackmysleepquality.databinding.ListItemSleepNightBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 private val ITEM_VIEW_TYPE_HEADER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
@@ -19,6 +23,9 @@ private val ITEM_VIEW_TYPE_ITEM = 1
 // ListAdpater es más eficiente que un RecyclerViewAdapter
 class SleepNightAdapter(val clickListener: SleepNightListener) :
     ListAdapter<DataItem, RecyclerView.ViewHolder>(SleepNightDiffCallback()) {
+
+    // para corutinas
+    private val adapterScope = CoroutineScope(Dispatchers.Default)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -30,11 +37,19 @@ class SleepNightAdapter(val clickListener: SleepNightListener) :
     }
 
     fun addHeaderAndSubmitList(list: List<SleepNight>?) {
-        val items = when (list) {
-            null -> listOf(DataItem.Header)
-            else -> listOf(DataItem.Header) + list.map { DataItem.SleepNightItem(it) }
+        /*
+         launch a coroutine in the adapterScope to manipulate the list.
+         Then switch to the Dispatchers.Main context to submit the list, as shown in the code below.
+         */
+        adapterScope.launch {
+            val items = when (list) {
+                null -> listOf(DataItem.Header)
+                else -> listOf(DataItem.Header) + list.map { DataItem.SleepNightItem(it) }
+            }
+            withContext(Dispatchers.Main) {
+                submitList(items)
+            }
         }
-        submitList(items)
     }
 
 
