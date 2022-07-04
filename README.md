@@ -18,6 +18,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
   - [Lección 5: Componentes de arquitectura](#lección-5-componentes-de-arquitectura)
   - [Lección 6: Corrutinas y bases de datos de Room](#lección-6-corrutinas-y-bases-de-datos-de-room)
   - [Lección 7: RecyclerView](#lección-7-recyclerview)
+  - [Lección 8: Cómo conectarse a Internet](#lección-8-cómo-conectarse-a-internet)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -49,6 +50,9 @@ En la lección 6, aprenderás a usar la biblioteca de base de datos de Room. Roo
 
 ## Lección 7: RecyclerView
 En la lección 7, se explica cómo usar una RecyclerView para mostrar listas y cuadrículas de elementos de manera eficiente. Para cuadrículas y listas complejas, aprenderás a hacer que RecyclerView sea más eficiente y que tu código sea más fácil de mantener y extender. Aprenderás a hacer que los elementos de una RecyclerView admitan clics. También aprenderás a agregar más de un contenedor de vistas y un diseño a listas y cuadrículas en RecyclerView, por ejemplo, para agregar un encabezado a tu app.
+
+## Lección 8: Cómo conectarse a Internet
+La Lección 8 te enseña a usar las bibliotecas desarrolladas por la comunidad para conectarte a un servicio web a fin de recuperar y mostrar datos. Aprenderás a manejar posibles errores de red y a usar la biblioteca Glide para cargar y mostrar fotos de Internet. También compilarás una RecyclerView y la usarás para mostrar una cuadrícula de imágenes.
 
 
 ## Autor
