@@ -22,9 +22,12 @@ import com.squareup.moshi.Json
 // Clase POKO para representar una propiedad de Mars
 data class MarsProperty(
     val id: String,
-    // De esta manera mapeamos el nombre de la propiedad en el JSON a la propiedad en la clase
+    // Mapeamos la propiedad de la API a una propiedad de nuestra clase
     @Json(name = "img_src")
     val imgSrcUrl: String,
     val type: String,
     val price: Double
-)
+) {
+    val isRental
+        get() = type == "rent"
+}
