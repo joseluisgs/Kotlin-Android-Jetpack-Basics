@@ -17,4 +17,14 @@
 
 package com.example.android.marsrealestate.network
 
-class MarsProperty()
+import com.squareup.moshi.Json
+
+// Clase POKO para representar una propiedad de Mars
+data class MarsProperty(
+    val id: String,
+    // De esta manera mapeamos el nombre de la propiedad en el JSON a la propiedad en la clase
+    @Json(name = "img_src")
+    val imgSrcUrl: String,
+    val type: String,
+    val price: Double
+)

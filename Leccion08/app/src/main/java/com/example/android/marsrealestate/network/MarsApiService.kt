@@ -17,25 +17,32 @@
 
 package com.example.android.marsrealestate.network
 
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 // Dirección del servicio de la API
 private const val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com/"
 
+// Moshi para Kotlin
+private val moshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .build()
+
 // Retrofit builder
 private val retrofit = Retrofit.Builder()
-    // Coge un Json y devuleve un string
-    .addConverterFactory(ScalarsConverterFactory.create())
+    // Factory Moshi JAON a Model POKO
+    .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .build()
 
 // Llamadas a las API para obtener los datos
 interface MarsApiService {
     @GET("realestate")
-    fun getProperties(): Call<String>
+    fun getProperties(): Call<List<MarsProperty>>
 }
 
 // Instancia de la APIService Singleton
