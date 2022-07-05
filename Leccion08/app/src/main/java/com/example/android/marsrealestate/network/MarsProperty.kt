@@ -17,9 +17,12 @@
 
 package com.example.android.marsrealestate.network
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
 // Clase POKO para representar una propiedad de Mars
+@Parcelize // Pasamos los datos entre fragment
 data class MarsProperty(
     val id: String,
     // Mapeamos la propiedad de la API a una propiedad de nuestra clase
@@ -27,7 +30,7 @@ data class MarsProperty(
     val imgSrcUrl: String,
     val type: String,
     val price: Double
-) {
+) : Parcelable {
     val isRental
         get() = type == "rent"
 }
