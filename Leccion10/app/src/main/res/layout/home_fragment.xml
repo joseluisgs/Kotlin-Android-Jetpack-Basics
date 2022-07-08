@@ -53,10 +53,11 @@
 
                 <TextView
                         android:id="@+id/title"
+                        style="?attr/textAppearanceHeadline5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:textAppearance="@style/TextAppearance.Title"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
                         android:text="@string/about_google_developer_groups"
                         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
                         app:layout_constraintStart_toStartOf="@+id/start_guideline"
@@ -77,7 +78,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
-                        android:textAppearance="@style/TextAppearance.Subtitle"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textAllCaps="true"
                         android:textStyle="bold"
                         android:background="#ff9999"
