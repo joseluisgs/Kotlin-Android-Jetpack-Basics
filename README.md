@@ -20,6 +20,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
   - [Lección 7: RecyclerView](#lección-7-recyclerview)
   - [Lección 8: Cómo conectarse a Internet](#lección-8-cómo-conectarse-a-internet)
   - [Lección 9: Repositorio](#lección-9-repositorio)
+  - [Lección 10: Diseño para todos](#lección-10-diseño-para-todos)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -57,6 +58,9 @@ La Lección 8 te enseña a usar las bibliotecas desarrolladas por la comunidad p
 
 ## Lección 9: Repositorio
 En la Lección 9, se explica cómo agregar un repositorio a fin de abstraer la capa de datos y proporcionar una API limpia al resto de la app en tu app de Kotlin para Android. También aprenderás a usar WorkManager para programar tareas en segundo plano de manera eficiente y optimizada.
+
+## Lección 10: Diseño para todos
+En esta lección, se explican los aspectos básicos del diseño de apps para Android. Se presentan temas y estilos, Material Design y cómo hacer que tu app sea más accesible para todos.
 
 
 
