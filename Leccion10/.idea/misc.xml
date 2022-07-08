@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_gdg.xml" value="0.20625" />
         <entry key="app/src/main/res/font/lobster_two.xml" value="0.2203125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_gdg_list.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.19010416666666666" />
       </map>
     </option>
   </component>
