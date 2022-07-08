@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package com.example.android.gdgfinder
 
 import android.os.Bundle
@@ -40,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setupNavigation()
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
 
     /**

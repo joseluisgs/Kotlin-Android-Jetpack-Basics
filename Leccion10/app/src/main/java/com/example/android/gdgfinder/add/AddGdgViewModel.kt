@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-
 package com.example.android.gdgfinder.add
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel;
 
 class AddGdgViewModel : ViewModel() {
 

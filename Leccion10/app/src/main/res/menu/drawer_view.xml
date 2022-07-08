@@ -16,10 +16,7 @@
 
 <menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/gdg_search"
-        android:title="@string/gdg_search" />
-    <item
-        android:id="@+id/gdg_apply"
-        android:title="@string/gdg_apply" />
+    <item android:title="@string/gdg_search" android:id="@+id/gdg_search"
+    />
+    <item android:title="@string/gdg_apply" android:id="@+id/gdg_apply"/>
 </menu>

@@ -14,13 +14,12 @@
   ~ limitations under the License.
   -->
 
-<resources>
-  <color name="primaryColor">#669df6</color>
-  <color name="primaryLightColor">#9cceff</color>
-  <color name="primaryDarkColor">#266fc3</color>
-  <color name="secondaryColor">#a142f4</color>
-  <color name="secondaryLightColor">#d774ff</color>
-  <color name="secondaryDarkColor">#6b00c0</color>
-  <color name="primaryTextColor">#000000</color>
-  <color name="secondaryTextColor">#ffffff</color>
-</resources>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MaterialComponents.Chip.Choice"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:checkedIconVisible="true"
+    app:chipBackgroundColor="@color/selected_highlight"
+    tools:checked="true" />

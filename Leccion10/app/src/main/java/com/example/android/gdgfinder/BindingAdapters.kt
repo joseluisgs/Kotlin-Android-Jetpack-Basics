@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package com.example.android.gdgfinder
 
 import android.view.LayoutInflater

@@ -15,12 +15,12 @@
   -->
 
 <resources>
-  <color name="primaryColor">#669df6</color>
-  <color name="primaryLightColor">#9cceff</color>
-  <color name="primaryDarkColor">#266fc3</color>
-  <color name="secondaryColor">#a142f4</color>
-  <color name="secondaryLightColor">#d774ff</color>
-  <color name="secondaryDarkColor">#6b00c0</color>
-  <color name="primaryTextColor">#000000</color>
-  <color name="secondaryTextColor">#ffffff</color>
+    <color name="primaryColor">#1a237e</color>
+    <color name="primaryLightColor">#534bae</color>
+    <color name="primaryDarkColor">#000051</color>
+    <color name="secondaryColor">#5e35b1</color>
+    <color name="secondaryLightColor">#9162e4</color>
+    <color name="secondaryDarkColor">#280680</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#ffffff</color>
 </resources>

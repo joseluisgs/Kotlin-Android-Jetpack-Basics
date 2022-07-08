@@ -17,5 +17,4 @@
 <resources>
 
     <dimen name="spacing_normal">16dp</dimen>
-    <dimen name="linear_dimension">32dp</dimen>
 </resources>
