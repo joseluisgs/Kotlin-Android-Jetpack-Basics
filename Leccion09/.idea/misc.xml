@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_dev_byte_viewer.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/devbyte_item.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/fragment_dev_byte.xml" value="0.16574074074074074" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
