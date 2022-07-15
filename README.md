@@ -4,7 +4,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
 
 [![Kotlin](https://img.shields.io/badge/Code-Kotlin-blueviolet)](https://kotlinlang.org/)
 [![Android](https://img.shields.io/badge/Code-Android-green)](https://developer.android.com/jetpack)
-[![LISENCE](https://img.shields.io/badge/Lisence-MIT-green)]()
+[![LICENSE](https://img.shields.io/badge/Lisence-CC-%23e64545)](https://joseluisgs.github.io/docs/license/)
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Kotlin-Android-Jetpack-Basics)
 
 ![imagen](./images/logo.png)
@@ -23,7 +23,7 @@ Ejemplos para usar Kotlin a nivel básico para el desarrollo de aplicaciones And
   - [Lección 10: Diseño para todos](#lección-10-diseño-para-todos)
   - [Autor](#autor)
     - [Contacto](#contacto)
-  - [Licencia](#licencia)
+  - [Licencia de uso](#licencia-de-uso)
 
 ## Acerca de
 Los siguientes proyectos muestran como usar Kotlin para aplicaciones Android en modo básico siguiendo los code examples de[ Android Jetpack de Google](https://developer.android.com/courses/kotlin-android-fundamentals/toc).
@@ -96,7 +96,8 @@ Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twi
     </a>
 </p>
 
-## Licencia
+## Licencia de uso
 
-Este proyecto está licenciado bajo licencia **MIT**, si desea saber más, visite el fichero [LICENSE](./LICENSE) para su
-uso docente y educativo.
+Este repositorio y todo su contenido está licenciado bajo licencia **Creative Commons**, si desea saber más, vea la [LICENSE](https://joseluisgs.github.io/docs/license/). Por favor si compartes, usas o modificas este proyecto cita a su autor, y usa las mismas condiciones para su uso docente, formativo o educativo y no comercial.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JoseLuisGS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://joseluisgs.github.io/" property="cc:attributionName" rel="cc:attributionURL">José Luis González Sánchez</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License</a>.<br />Creado a partir de la obra en <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/joseluisgs" rel="dct:source">https://github.com/joseluisgs</a>.
